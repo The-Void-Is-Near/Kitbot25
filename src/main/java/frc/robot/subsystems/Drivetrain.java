@@ -16,8 +16,6 @@ public class Drivetrain extends SubsystemBase {
   // Victor backLeft;
   // Victor backRight;
   DifferentialDrive drive;
-  MotorControllerGroup leftMs;
-  MotorControllerGroup rightMs;
 
   /** Creates a new Drivetrain. */
   public Drivetrain() {

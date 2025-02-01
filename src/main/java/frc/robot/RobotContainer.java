@@ -6,6 +6,7 @@ package frc.robot;
 import java.lang.Math;
 import frc.robot.commands.TeleopDrive;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.XboxController.Axis;
@@ -28,9 +29,10 @@ public class RobotContainer {
   private final int thrustAxis = XboxController.Axis.kRightTrigger.value;
   private final int reverseAxis = XboxController.Axis.kLeftTrigger.value;
   private final int steerAxisX = XboxController.Axis.kLeftX.value;
-  private final int shooter
+  private final int shooterAxis = XboxController.Button.kB.value;//controls
 
   public Drivetrain drive = new Drivetrain();
+  public Shooter shooter = new Shooter();
 
   // private final MotorController shooterM = new PWMVictorSPX(5);
 
@@ -41,6 +43,7 @@ public class RobotContainer {
         new TeleopDrive(drive,
         () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(steerAxisX)),
         () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(thrustAxis)-portedXboxController.getRawAxis(reverseAxis))));
+    
   }
  
   /**
