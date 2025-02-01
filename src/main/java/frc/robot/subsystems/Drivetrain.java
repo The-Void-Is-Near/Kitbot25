@@ -23,8 +23,10 @@ public class Drivetrain extends SubsystemBase {
     WPI_VictorSPX topRightM = new WPI_VictorSPX(1);
     WPI_VictorSPX bottomLeftM = new WPI_VictorSPX(3);
     WPI_VictorSPX bottomRightM = new WPI_VictorSPX(4);
-
+    
+    @SuppressWarnings("removal")
     MotorControllerGroup leftMs = new MotorControllerGroup(topRightM, bottomRightM);
+    @SuppressWarnings("removal")
     MotorControllerGroup rightMs = new MotorControllerGroup(topLeftM, bottomLeftM);
     drive = new DifferentialDrive(leftMs, rightMs);
     }

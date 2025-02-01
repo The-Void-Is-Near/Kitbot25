@@ -3,13 +3,12 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
-import java.lang.Math;
 import frc.robot.commands.TeleopDrive;
+import frc.robot.commands.TeleopShooter;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.XboxController.Axis;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -29,7 +28,7 @@ public class RobotContainer {
   private final int thrustAxis = XboxController.Axis.kRightTrigger.value;
   private final int reverseAxis = XboxController.Axis.kLeftTrigger.value;
   private final int steerAxisX = XboxController.Axis.kLeftX.value;
-  private final int shooterAxis = XboxController.Button.kB.value;//controls
+  private JoystickButton shooterButton = new JoystickButton(portedXboxController, XboxController.Button.kY.value);//controls
 
   public Drivetrain drive = new Drivetrain();
   public Shooter shooter = new Shooter();
@@ -61,6 +60,8 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
+    shooterButton.whileTrue(new TeleopShooter(shooter, Constants.MotorConstants.shooterK));
+    shooterButton.whileFalse(new TeleopShooter(shooter, 0.0));
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     // new Trigger(m_exampleSubsystem::exampleCondition)
     // .onTrue(new ExampleCommand(m_exampleSubsystem));

@@ -8,7 +8,7 @@ public class Shooter {
         public Shooter(){
                 shooterM = new TalonSRX(Constants.MotorConstants.shooterMid);
         }
-        public void Shoot(){
-                shooterM.set(TalonSRXControlMode.PercentOutput, 0);
+        public void Shoot(double percentOut){
+                shooterM.set(TalonSRXControlMode.PercentOutput, -percentOut);
         }
 }
