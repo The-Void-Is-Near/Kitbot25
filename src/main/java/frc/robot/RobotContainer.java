@@ -47,7 +47,7 @@ public class RobotContainer {
     drive.setDefaultCommand(
         new TeleopDrive(drive,
         () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(steerAxisX)),
-        () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(reverseAxis)-portedXboxController.getRawAxis(thrustAxis))));
+        () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(reverseAxis)-portedXboxController.getRawAxis(thrustAxis))));//Flip Thrust
   }
  
   /**
