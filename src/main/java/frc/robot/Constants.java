@@ -17,8 +17,8 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
   public static class MotorConstants{
-    public static final double motorLimitK = 0.3;
-    public static final double shooterK = 1.0;
+    public static final double motorLimitK = 0.75;
+    public static final double shooterK = .35;
     public static final int shooterMid = 5;
 
   }

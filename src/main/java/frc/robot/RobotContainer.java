@@ -37,12 +37,17 @@ public class RobotContainer {
 
   public RobotContainer() {
     // Configure the trigger bindings
-    configureBindings();
+    /*configureBindings();
     drive.setDefaultCommand(
         new TeleopDrive(drive,
         () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(steerAxisX)),
         () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(thrustAxis)-portedXboxController.getRawAxis(reverseAxis))));
-    
+    */
+    configureBindings();
+    drive.setDefaultCommand(
+        new TeleopDrive(drive,
+        () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(steerAxisX)),
+        () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(reverseAxis)-portedXboxController.getRawAxis(thrustAxis))));
   }
  
   /**
