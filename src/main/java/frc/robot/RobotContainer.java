@@ -13,15 +13,13 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
   private final Joystick portedXboxController = new Joystick(0); //Set USB Port.
-  private final int thrustAxis = XboxController.Axis.kRightTrigger.value; //ID of Axis. (axis is analog)
+  private final int thrustAxis = XboxController.Axis.kRightTrigger.value; //ID of Axis. (axis is analog, but this is not data)
   private final int reverseAxis = XboxController.Axis.kLeftTrigger.value;
   private final int steerAxisX = XboxController.Axis.kLeftX.value;
-  private JoystickButton shooterButton = new JoystickButton(portedXboxController, XboxController.Button.kY.value);//Reads and sets to real value (BOOL)
+  private JoystickButton shooterButton = new JoystickButton(portedXboxController, XboxController.Button.kY.value);//Reads and sets to real value (BOOL) via the ID.
 
-  public Drivetrain drive = new Drivetrain();
+  public Drivetrain drive = new Drivetrain();//Used class in subsystem and creates an object.
   public Shooter shooter = new Shooter();
-
-  // private final MotorController shooterM = new PWMVictorSPX(5);
 
   public RobotContainer() {
     // Configure the trigger bindings
