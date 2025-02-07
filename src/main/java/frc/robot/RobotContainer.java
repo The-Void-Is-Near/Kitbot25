@@ -19,7 +19,7 @@ public class RobotContainer {
   private JoystickButton shooterButton = new JoystickButton(portedXboxController, XboxController.Button.kY.value);//Reads and sets to real value (BOOL) via the ID.
 
   public Drivetrain drive = new Drivetrain();//Used class in subsystem and creates an object.
-  public Shooter shooter = new Shooter();
+  public Shooter shooter = new Shooter();// The COMMANDS call the SUBSYSTEM
 
   public RobotContainer() {
     configureBindings();//Defines controls (Xbox)
