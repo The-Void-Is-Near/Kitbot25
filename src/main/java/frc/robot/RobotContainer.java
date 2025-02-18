@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 public class RobotContainer {
   private final Joystick portedController = new Joystick(0); //Set USB Port.
-  private final int thrustAxis = XboxController.Axis.kLeftTrigger.value; //ID of Axis. (axis is analog, but this is not data)
-  private final int reverseAxis = XboxController.Axis.kRightTrigger.value;
+  private final int thrustAxis = XboxController.Axis.kRightTrigger.value; //ID of Axis. (axis is analog, but this is not data)
+  private final int reverseAxis = XboxController.Axis.kLeftTrigger.value;
   private final int steerAxisX = XboxController.Axis.kRightX.value;
   private JoystickButton shooterButton = new JoystickButton(portedController, XboxController.Button.kY.value);//Reads and sets to real value (BOOL) via the ID.
 
