@@ -4,19 +4,17 @@ import frc.robot.commands.TeleopShooter;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
+//import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 //Don't add to Robot.java, Put the structure of the robot (including subsystems, commands, and trigger mappings) HERE.
 
 public class RobotContainer {
-  private final Joystick portedXboxController = new Joystick(0); //Set USB Port.
-  private final int thrustAxis = XboxController.Axis.kRightTrigger.value; //ID of Axis. (axis is analog, but this is not data)
-  private final int reverseAxis = XboxController.Axis.kLeftTrigger.value;
-  private final int steerAxisX = XboxController.Axis.kLeftX.value;
-  private JoystickButton shooterButton = new JoystickButton(portedXboxController, XboxController.Button.kY.value);//Reads and sets to real value (BOOL) via the ID.
+  private final Joystick portedController = new Joystick(0); //Set USB Port.
+  private final int thrustAxis = 7; //ID of Axis. (axis is analog, but this is not data)
+  private final int reverseAxis = 8;
+  private final int steerAxisX = 5;
+  private JoystickButton shooterButton = new JoystickButton(portedController, 4);//Reads and sets to real value (BOOL) via the ID.
 
   public Drivetrain drive = new Drivetrain();//Used class in subsystem and creates an object.
   public Shooter shooter = new Shooter();// The COMMANDS call the SUBSYSTEM
@@ -25,8 +23,8 @@ public class RobotContainer {
     configureBindings();//Defines controls (Xbox)
     drive.setDefaultCommand(
         new TeleopDrive(drive,
-        () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(steerAxisX)),
-        () -> Constants.MotorConstants.motorLimitK*(portedXboxController.getRawAxis(reverseAxis)-portedXboxController.getRawAxis(thrustAxis))));//Flip Thrust
+        () -> Constants.MotorConstants.motorLimitK*(portedController.getRawAxis(steerAxisX)),
+        () -> Constants.MotorConstants.motorLimitK*(portedController.getRawAxis(reverseAxis)-portedController.getRawAxis(thrustAxis))));//Flip Thrust
   }
  
   private void configureBindings() {
