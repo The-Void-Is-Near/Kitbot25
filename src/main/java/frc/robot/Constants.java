@@ -18,8 +18,8 @@ public final class Constants {
   }
   public static class MotorConstants{
     public static final double motorLimitK = 0.75;
-    public static final double shooterK = .35;
-    public static final int shooterMid = 5;
+    public static final double shooterK = 1;
+    public static final int shooterMid = 6;
 
   }
 }
