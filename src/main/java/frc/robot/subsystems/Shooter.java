@@ -6,7 +6,7 @@ import frc.robot.Constants;
 public class Shooter {
         TalonSRX shooterM;
         public Shooter(){
-                shooterM = new TalonSRX(Constants.MotorConstants.shooterMid);
+                shooterM = new TalonSRX(Constants.Shooter.ShooterMotorID);
         }
         public void Shoot(double percentOut){
                 shooterM.set(TalonSRXControlMode.PercentOutput, -percentOut);
