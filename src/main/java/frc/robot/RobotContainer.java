@@ -1,8 +1,10 @@
 package frc.robot;
 import frc.robot.commands.TeleopArm;
+import frc.robot.commands.TeleopDeepClimb;
 import frc.robot.commands.TeleopDrive;
 import frc.robot.commands.TeleopShooter;
 import frc.robot.subsystems.Arm;
+import frc.robot.subsystems.DeepClimb;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj.Joystick;
@@ -23,9 +25,13 @@ public class RobotContainer {
   private POVButton armButtom = new POVButton(portedController, Constants.Controls.arm);
   private POVButton armButtomReverse = new POVButton(portedController, Constants.Controls.armReverse);
 
+  private JoystickButton climbButton = new JoystickButton(portedController, Constants.Controls.deepclimb);
+  private JoystickButton climButtonReverse = new JoystickButton(portedController, Constants.Controls.deepclimbReverse);
+
   public Drivetrain drive = new Drivetrain();
   public Shooter shooter = new Shooter();
   public Arm arm = new Arm(); 
+  public DeepClimb climb = new DeepClimb();
 
   public RobotContainer() {
     configureBindings();
@@ -43,6 +49,11 @@ public class RobotContainer {
 
     armButtom.whileTrue(new TeleopArm(arm, Constants.AlgeArm.ArmSpeedLimit));
     armButtomReverse.whileTrue(new TeleopArm(arm, -Constants.AlgeArm.ArmSpeedLimit));
+    armButtom.onFalse(new TeleopArm(arm, 0.0));
+    armButtomReverse.onFalse(new TeleopArm(arm, 0.0));
+
+    climbButton.whileTrue(new TeleopDeepClimb(climb, Constants.DeepClimb.climbSpeedLimit));
+    armButtomReverse.whileTrue(new TeleopDeepClimb(climb, -Constants.DeepClimb.climbSpeedLimit));
     armButtom.onFalse(new TeleopArm(arm, 0.0));
     armButtomReverse.onFalse(new TeleopArm(arm, 0.0));
   }
