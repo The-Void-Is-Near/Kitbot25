@@ -3,17 +3,17 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.Arm;
-//Runs the subsystem
+import frc.robot.Constants.DeepClimb;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class TeleopArm extends Command {
+public class TeleopDeepClimb extends Command {
   /** Creates a new TeleopShooter. */
-  Arm arm;
+  DeepClimb deepclimb;
   double PercentOutSup;
-  public TeleopArm(Arm arm, double PercentOutSup) {
-    this.arm = arm;
+  public TeleopDeepClimb(DeepClimb deepclimb, double PercentOutSup) {
+    this.deepclimb = deepclimb;
     this.PercentOutSup = PercentOutSup;
   }
 
@@ -24,7 +24,7 @@ public class TeleopArm extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    arm.Shoot(PercentOutSup);
+    deepclimb.Shoot(PercentOutSup);
   }
 
   // Called once the command ends or is inte{rrupted.

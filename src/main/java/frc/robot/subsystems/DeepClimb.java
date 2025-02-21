@@ -4,12 +4,12 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import frc.robot.Constants;
 //sub systems do define how to run (thinking) a chhange
-public class Arm {
-        VictorSPX armM;
-        public Arm(){
-                armM = new VictorSPX(Constants.AlgeArm.ArmMotorID);
+public class DeepClimb {
+        VictorSPX climbM;
+        public DeepClimb(){
+                climbM = new VictorSPX(Constants.DeepClimb.ClimbMotorID);
         }
         public void Shoot(double percentOut){
-                armM.set(VictorSPXControlMode.PercentOutput, -percentOut);
+                climbM.set(VictorSPXControlMode.PercentOutput, -percentOut);
         }
 }
