@@ -26,7 +26,7 @@ public class RobotContainer {
   private POVButton armButtomReverse = new POVButton(portedController, Constants.Controls.armReverse);
 
   private JoystickButton climbButton = new JoystickButton(portedController, Constants.Controls.deepclimb);
-  private JoystickButton climButtonReverse = new JoystickButton(portedController, Constants.Controls.deepclimbReverse);
+  private JoystickButton climbButtonReverse = new JoystickButton(portedController, Constants.Controls.deepclimbReverse);
 
   public Drivetrain drive = new Drivetrain();
   public Shooter shooter = new Shooter();
@@ -52,10 +52,10 @@ public class RobotContainer {
     armButtom.onFalse(new TeleopArm(arm, 0.0));
     armButtomReverse.onFalse(new TeleopArm(arm, 0.0));
 
-    climbButton.whileTrue(new TeleopDeepClimb(climb, Constants.DeepClimb.climbSpeedLimit));
-    armButtomReverse.whileTrue(new TeleopDeepClimb(climb, -Constants.DeepClimb.climbSpeedLimit));
-    armButtom.onFalse(new TeleopArm(arm, 0.0));
-    armButtomReverse.onFalse(new TeleopArm(arm, 0.0));
+    climbButton.whileTrue(new TeleopDeepClimb(climb, Constants.DeepClimbConstants.climbSpeedLimit));
+    climbButtonReverse.whileTrue(new TeleopDeepClimb(climb, -Constants.DeepClimbConstants.climbSpeedLimit));
+    climbButton.onFalse(new TeleopDeepClimb(climb, 0.0));
+    climbButtonReverse.onFalse(new TeleopDeepClimb(climb, 0.0));
   }
 
   public Command getAutonomousCommand() {

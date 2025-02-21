@@ -30,7 +30,7 @@ public final class DriveBase{
     public static final double ArmSpeedLimit = .25;
   }
 
-  public static class DeepClimb{
+  public static class DeepClimbConstants{
     public static final int ClimbMotorID = 61;
     public static final double climbSpeedLimit = .25;
   }

@@ -7,7 +7,7 @@ import frc.robot.Constants;
 public class DeepClimb {
         VictorSPX climbM;
         public DeepClimb(){
-                climbM = new VictorSPX(Constants.DeepClimb.ClimbMotorID);
+                climbM = new VictorSPX(Constants.DeepClimbConstants.ClimbMotorID);
         }
         public void Shoot(double percentOut){
                 climbM.set(VictorSPXControlMode.PercentOutput, -percentOut);
