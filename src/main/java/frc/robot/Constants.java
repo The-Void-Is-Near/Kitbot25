@@ -32,7 +32,7 @@ public final class DriveBase{
 
   public static class DeepClimbConstants{
     public static final int ClimbMotorID = 61;
-    public static final double climbSpeedLimit = .25;
+    public static final double climbSpeedLimit = .5;
   }
 }
  
