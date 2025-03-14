@@ -34,5 +34,9 @@ public final class DriveBase{
     public static final int ClimbMotorID = 61;
     public static final double climbSpeedLimit = .5;
   }
+
+  public static class LEDS{
+    public static final int ID = 0;
+  }
 }
  
