@@ -39,8 +39,7 @@ public class RobotContainer {
         new TeleopDrive(drive,
         () -> Constants.DriveBase.MotorSpeedLimit*(portedController.getRawAxis(steerAxisX)),
         () -> Constants.DriveBase.MotorSpeedLimit*(portedController.getRawAxis(thrustAxis)-portedController.getRawAxis(reverseAxis))));
-  }
-  
+  } 
   private void configureBindings() {
     shooterButton.whileTrue(new TeleopShooter(shooter, Constants.Shooter.ShooterSpeedLimit));
     shooterButtonReverse.whileTrue(new TeleopShooter(shooter, -Constants.Shooter.ShooterSpeedLimit));
