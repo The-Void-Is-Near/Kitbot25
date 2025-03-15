@@ -13,21 +13,23 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 
 public class RobotContainer {
+  //Defines 1 Controller
   private final Joystick portedController = new Joystick(Constants.Controls.ControllerPort); 
-
+  //Sets Button IDs
   private final int thrustAxis = Constants.Controls.thrust;
   private final int reverseAxis = Constants.Controls.reverse;
   private final int steerAxisX = Constants.Controls.steer;
-
+  //Defines Shooter Buttons
   private JoystickButton shooterButton = new JoystickButton(portedController, Constants.Controls.shoot);
   private JoystickButton shooterButtonReverse = new JoystickButton(portedController, Constants.Controls.shootReverse);
-
+  //Defines Arm Buttons
   private POVButton armButtom = new POVButton(portedController, Constants.Controls.arm);
   private POVButton armButtomReverse = new POVButton(portedController, Constants.Controls.armReverse);
-
+  //Defines Climb Buttons
   private JoystickButton climbButton = new JoystickButton(portedController, Constants.Controls.deepclimb);
   private JoystickButton climbButtonReverse = new JoystickButton(portedController, Constants.Controls.deepclimbReverse);
 
+  //Subsystems: 
   public Drivetrain drive = new Drivetrain();
   public Shooter shooter = new Shooter();
   public Arm arm = new Arm(); 
