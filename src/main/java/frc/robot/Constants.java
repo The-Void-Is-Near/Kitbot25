@@ -1,5 +1,11 @@
 
 package frc.robot;
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+import com.ctre.phoenix.led.Animation;
+
+import apple.laf.JRSUIConstants.Animating;
 import edu.wpi.first.wpilibj.XboxController;
 
 public final class Constants {
@@ -37,8 +43,8 @@ public final class Constants {
     public static final int ClimbMotorID = 61;
     public static final double climbSpeedLimit = .5;
   }
-
   public static class LEDS{
     public static final int ID = 0;
   }
+
 }
