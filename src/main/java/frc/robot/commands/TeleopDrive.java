@@ -11,11 +11,13 @@ import frc.robot.subsystems.Drivetrain;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class TeleopDrive extends Command {
+  //Creates A New Drive, Declares Drive Type.
   Drivetrain drive;
   DoubleSupplier xSpeedSup;
   DoubleSupplier ySpeedSup;
   DoubleSupplier rotSup;
-  /** Creates a new TeleopDrive. */
+
+  // Creates a new TeleopDrive.
   public TeleopDrive(Drivetrain drive, DoubleSupplier xSpeedSup, DoubleSupplier ySpeedSup) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.drive = drive;

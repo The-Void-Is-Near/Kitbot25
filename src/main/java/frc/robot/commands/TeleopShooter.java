@@ -4,14 +4,14 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
-//Runs the subsystem
 import frc.robot.subsystems.Shooter;
 
-/* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class TeleopShooter extends Command {
-  /** Creates a new TeleopShooter. */
+  //Creates A New Shooter, Declares Shooter Type.
   Shooter Shooter;
   double PercentOutSup;
+  
+  //Declares Values With Parameters
   public TeleopShooter(Shooter Shooter, double PercentOutSup) {
     this.Shooter = Shooter;
     this.PercentOutSup = PercentOutSup;

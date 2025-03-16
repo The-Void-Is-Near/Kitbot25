@@ -45,16 +45,17 @@ public class RobotContainer {
   } 
 
   private void configureBindings() {
-    shooterButton.whileTrue(new TeleopShooter(shooter, Constants.Shooter.ShooterSpeedLimit));
-    shooterButtonReverse.whileTrue(new TeleopShooter(shooter, -Constants.Shooter.ShooterSpeedLimit));
+    //Set Shooter Buttons
+    shooterButton.whileTrue(new TeleopShooter(shooter, Constants.Shooter.ShootSpeedLimit));
+    shooterButtonReverse.whileTrue(new TeleopShooter(shooter, -Constants.Shooter.ShootSpeedLimit));
     shooterButton.onFalse(new TeleopShooter(shooter, 0.0));
     shooterButtonReverse.onFalse(new TeleopShooter(shooter, 0.0));
-
+    //Set Arm Buttons
     armButtom.whileTrue(new TeleopArm(arm, Constants.AlgeArm.ArmSpeedLimit));
     armButtomReverse.whileTrue(new TeleopArm(arm, -Constants.AlgeArm.ArmSpeedLimit));
     armButtom.onFalse(new TeleopArm(arm, 0.0));
     armButtomReverse.onFalse(new TeleopArm(arm, 0.0));
-
+    //Set Climb Buttons
     climbButton.whileTrue(new TeleopDeepClimb(climb, Constants.DeepClimbConstants.climbSpeedLimit));
     climbButtonReverse.whileTrue(new TeleopDeepClimb(climb, -Constants.DeepClimbConstants.climbSpeedLimit));
     climbButton.onFalse(new TeleopDeepClimb(climb, 0.0));

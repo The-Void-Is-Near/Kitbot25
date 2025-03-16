@@ -15,22 +15,29 @@ public class Drivetrain extends SubsystemBase {
   // Victor frontRight;
   // Victor backLeft;
   // Victor backRight;
+
+  //Declares Dtive Type.
   DifferentialDrive drive;
 
-  /** Creates a new Drivetrain. */
+  // Creates a new Drivetrain.
   public Drivetrain() {
+    //Declares Values With Set CAN IDs.
     WPI_TalonSRX topLeftM = new WPI_TalonSRX(2);
     WPI_VictorSPX topRightM = new WPI_VictorSPX(1);
     WPI_VictorSPX bottomLeftM = new WPI_VictorSPX(3);
     WPI_VictorSPX bottomRightM = new WPI_VictorSPX(4);
     
+    //Declares Motor Groups
     @SuppressWarnings("removal")
     MotorControllerGroup leftMs = new MotorControllerGroup(topRightM, bottomRightM);
     @SuppressWarnings("removal")
     MotorControllerGroup rightMs = new MotorControllerGroup(topLeftM, bottomLeftM);
+
+    //Sets Differential Drive.
     drive = new DifferentialDrive(leftMs, rightMs);
     }
 
+  //Runs Motors With Parameters
   public void drive(double STEER, double SPEED) {
     drive.arcadeDrive(STEER, SPEED);
   }
