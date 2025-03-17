@@ -1,11 +1,5 @@
 
 package frc.robot;
-import java.util.Dictionary;
-import java.util.Hashtable;
-
-import com.ctre.phoenix.led.Animation;
-
-import apple.laf.JRSUIConstants.Animating;
 import edu.wpi.first.wpilibj.XboxController;
 
 public final class Constants {
@@ -45,6 +39,7 @@ public final class Constants {
   }
   public static class LEDS{
     public static final int ID = 0;
+    public static final int COUNT = 30;
   }
 
 }
